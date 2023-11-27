@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import styles from '@/components/atom/Container/container.module.scss';
+import styles from '@/components/organisms/Container/container.module.scss';
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   const [showPageNum, setShowPageNum] = useState<number>(0);
