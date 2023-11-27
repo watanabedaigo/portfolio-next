@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '@/app/globals.css';
+import '@/styles/globals.scss';
 import Container from '@/components/organisms/Container/Container';
 
 export const metadata: Metadata = {

@@ -1,0 +1,70 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '@/styles/setting/setting.scss';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+section {
+  position: absolute;
+  top: 96px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 96px);
+  transition: transform 0.3s;
+
+  &.fv {
+    z-index: 4;
+    background-color: #ffe4b5;
+  }
+
+  &.about {
+    z-index: 3;
+    background-color: #b0e0e6;
+  }
+
+  &.skill {
+    z-index: 2;
+    background-color: #ffe4b5;
+  }
+
+  &.works {
+    z-index: 1;
+    background-color: #b0e0e6;
+  }
+
+  &.contact {
+    z-index: 0;
+    background-color: #ffe4b5;
+  }
+}
+
+.prev {
+  transform: translateX(-100vw);
+  transition: transform 0.3s;
+}
+
+.contents {
+  display: block;
+  background-color: #fff;
+  width: 80vw;
+  margin: 10px auto;
+  border-radius: 10px;
+
+  @include min($md) {
+    width: 60vw;
+  }
+}
