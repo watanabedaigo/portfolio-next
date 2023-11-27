@@ -1,0 +1,16 @@
+@import '@/styles/setting/setting.scss';
+
+.container {
+  position: fixed;
+  z-index: 101;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 200px;
+  border: solid 1px #000;
+  font-size: $font_sm;
+
+  @include min($md) {
+    border: solid 1px $normal;
+  }
+}
