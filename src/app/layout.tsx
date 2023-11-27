@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import Container from '@/components/atom/Container';
+import Container from '@/components/organisms/Container/Container';
 
 export const metadata: Metadata = {
   title: 'Root',
