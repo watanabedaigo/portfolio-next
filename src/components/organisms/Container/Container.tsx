@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import styles from '@/components/atom/Container/container.module.scss';
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   const [showPageNum, setShowPageNum] = useState<number>(0);
   const showPageArray = ['fv', 'about', 'skill', 'works', 'contact'];
 
   const pathname = usePathname();
-  const isExceptWorks = pathname.indexOf('works') === -1;
+  const isWorks = pathname.indexOf('works') !== -1;
 
   useEffect(() => {
     const defaultNum = Number(localStorage.getItem('showPageNum'));
@@ -46,8 +47,8 @@ const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <p>atom/Container</p>
-      <div className="container">
-        {isExceptWorks ? (
+      <div className={styles.container}>
+        {!isWorks ? (
           <div>
             <p>showPageNum: {showPageNum}</p>
             <p>showPageName: {showPageArray[showPageNum]}</p>
@@ -62,7 +63,7 @@ const Container = ({ children }: { children: React.ReactNode }) => {
           <Link href="/">to home</Link>
         )}
       </div>
-      {isExceptWorks && <div>{children}</div>}
+      {!isWorks && <div>{children}</div>}
     </div>
   );
 };
