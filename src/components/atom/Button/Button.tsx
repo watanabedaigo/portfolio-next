@@ -1,5 +1,6 @@
 import React from 'react';
-import './button.css';
+// import './button.css';
+import styles from '@/components/atom/Button/button.module.scss';
 
 interface ButtonProps {
   /**
@@ -34,11 +35,13 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary
+    ? styles.storybookButtonPrimary
+    : styles.storybookButtonSecondary;
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[styles.storybookButton, mode].join(' ')}
       {...props}
     >
       {label}
